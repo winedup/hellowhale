@@ -1,6 +1,11 @@
-version: "3"
+version: "3.5"
+networks:
+  webnet:
+    name: webnet
 services:
   webserver:
-    build: docker_data
+    build: .
     ports:
-      - "8000:80"
+      - "9000:80"
+    networks:
+      - webnet
