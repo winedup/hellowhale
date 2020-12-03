@@ -1,11 +1,11 @@
-version: "3.5"
+version: "3"
 networks:
   webnet:
-    name: webnet
 services:
   webserver:
-    build: .
+    image: winedup/hellowhale:foo2
+    hostname: webserver
     ports:
-      - "9000:80"
+      - "8000:80"
     networks:
       - webnet

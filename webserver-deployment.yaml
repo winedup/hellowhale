@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: webserver
+  name: webserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: webserver
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/webnet: "true"
+        io.kompose.service: webserver
+    spec:
+      containers:
+      - image: winedup/hellowhale:foo2
+        imagePullPolicy: ""
+        name: webserver
+        ports:
+        - containerPort: 80
+        resources: {}
+      hostname: webserver
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
