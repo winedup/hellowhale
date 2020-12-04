@@ -1,5 +1,8 @@
 <h2>Visitor information</h2>
 
+<meta http-equiv="refresh" content="10" /meta>
+
+<p>eth0 Info: <!--#exec cmd="ifconfig eth0" --> </p>
 <p>Container start time: <!--#exec cmd="stat --format=%x /proc/1/cmdline" --></p>
 <p>Visitor IP address: <!--#echo var="REMOTE_ADDR" --></p>
 <p>Visitor User agent: <!--#echo var="HTTP_USER_AGENT" --></p>
