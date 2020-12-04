@@ -3,9 +3,9 @@ networks:
   webnet:
 services:
   webserver:
-    image: winedup/hellowhale:foo2
+    image: winedup/hellowhale:liave
     hostname: webserver
     ports:
-      - "8000:80"
+      - "80:80"
     networks:
       - webnet
